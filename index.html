@@ -30,20 +30,19 @@
 
         header{
             position: sticky;
-            top: 0;
-            z-index: 100;
             background-color: var(--destaque);
-            padding: 30px;
-            display: flex;
-            flex-flow: row nowrap;
-            border-radius: 0 0 15px 15px;
-        }
-
-        header div{
             padding: 20px;
             display: flex;
-            align-items: center;
+            flex-flow: column nowrap;
+            border-radius: 0 0 15px 15px;
             gap: 10px;
+        }
+
+        div.cabecalho{
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
         }
 
         span.dot{
@@ -56,7 +55,7 @@
 
         h1.titulo{
             color: var(--texto-inverso);
-            font-size: 40px;
+            font-size: 30px;
             font-weight: bold;
         }
 
@@ -143,17 +142,29 @@
             border: 2px solid var(--destaque);
             box-shadow: none;
         }
+
+        @media screen and (min-width:768px){
+            header{
+                flex-flow: row nowrap;
+                top: 0;
+                z-index: 100;
+            }
+
+            div.cabecalho{
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-    <div>
+    <div class="cabecalho">
         <span class="dot"></span><h1 class="titulo">CadGC</h1>
     </div>
-
+    
     <hr>
-
-    <div>
+   
+    <div class="cabecalho">
         <p class="texto">O formulário on-line oficial da Igreja PIB Castelo para líderes e liderados de GC</p>
     </div>
     </header>

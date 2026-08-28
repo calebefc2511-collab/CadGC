@@ -59,10 +59,11 @@
             font-weight: bold;
         }
 
-        hr{
+        div.linha{
             background-color: var(--texto-inverso);
-            padding: 1px;
-            border-style: none;
+            width: 100%;
+            height: 2px;
+            flex-shrink: 0;
         }
 
         p.texto{
@@ -153,6 +154,11 @@
             div.cabecalho{
                 padding: 10px;
             }
+
+            div.linha{
+                width: 2px;
+                height: 30px;
+            }
         }
     </style>
 </head>
@@ -162,7 +168,7 @@
         <span class="dot"></span><h1 class="titulo">CadGC</h1>
     </div>
     
-    <hr>
+    <div class="linha">
    
     <div class="cabecalho">
         <p class="texto">O formulário on-line oficial da Igreja PIB Castelo para líderes e liderados de GC</p>

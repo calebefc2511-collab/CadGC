@@ -51,6 +51,7 @@
             border-radius: 2px;
             background: var(--texto-inverso); 
             transform: rotate(45deg);
+            flex-shrink: 0;
         }
 
         h1.titulo{
@@ -87,6 +88,11 @@
             justify-content: center;
         }
 
+        fieldset{
+            border: none;
+            width: 100%;
+        }
+
         legend{
             display: flex;
             justify-content: center;
@@ -96,7 +102,7 @@
             margin-bottom: 15px;
         }
 
-        main section div{
+        section > form > fieldset > div{
             background-color: var(--fundo-card);
             display: flex;
             flex-flow: column nowrap;
@@ -134,8 +140,6 @@
             border: 1px solid #ccc;
             border-radius: 10px;
             font-size: 16px;
-            appearance: none;
-            -webkit-appearance: none;
         }
 
         input.campo:focus {
@@ -157,7 +161,7 @@
 
             div.linha{
                 width: 2px;
-                height: 30px;
+                height: 50px;
             }
         }
     </style>
@@ -168,7 +172,7 @@
         <span class="dot"></span><h1 class="titulo">CadGC</h1>
     </div>
     
-    <div class="linha">
+    <div class="linha"></div>
    
     <div class="cabecalho">
         <p class="texto">O formulário on-line oficial da Igreja PIB Castelo para líderes e liderados de GC</p>
@@ -177,7 +181,7 @@
     <main>
         <section>
             <form action="#" method="get">
-                <fildset>
+                <fieldset>
                     <legend>Entre com seus dados</legend>
             
                     <div>
@@ -235,7 +239,7 @@
 
                         <input class="botao" type="submit" value="Finalizar Cadastro">
                     </div>
-                </fildset>
+                </fieldset>
             </form>
         </section>
     </main>

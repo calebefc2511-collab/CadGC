@@ -195,20 +195,8 @@
                         <label for="Nasc">Data de Nascimento</label>
                         <input class="campo"  type="date" id="Nasc" required>
                 
-                        <p>Pertence a algum GC?</p>
-
-                        <label>
-                        <input type="radio" name="gc" value="Sim" required>
-                            Sim
-                        </label>
-
-                        <label>
-                        <input type="radio" name="gc" value="Não" required>
-                            Não
-                        </label>
-                
                         <label for="GC">Qual é o seu GC?</label>
-                        <input class="campo" type="text" id="GC" required>
+                        <input class="campo" type="text" id="GC" required placeholder="Se não tiver digite: Não Tenho GC">
                 
                         <p>É membro da PIB Castelo?</p>
 
@@ -244,7 +232,106 @@
         </section>
     </main>
     <script>
+        const nome = document.getElementById("Nome");
 
+        nome.addEventListener("input", function() {
+
+            nome.value = nome.value.replace(
+                /[^A-Za-zÀ-ÖØ-öø-ÿ\s'-]/g,""
+            );
+
+        });
+
+        const cpf = document.getElementById("CPF");
+
+        cpf.addEventListener("input", function() {
+
+            let valor = cpf.value.replace(/\D/g, "");
+
+            valor = valor.substring(0, 11);
+
+            if (valor.length > 9) {
+
+            valor =
+                valor.substring(0, 3) + "." +
+                valor.substring(3, 6) + "." +
+                valor.substring(6, 9) + "-" +
+                valor.substring(9, 11);
+
+            }
+
+            else if (valor.length > 6) {
+
+                valor =
+                    valor.substring(0, 3) + "." +
+                    valor.substring(3, 6) + "." +
+                    valor.substring(6);
+
+            }
+
+            else if (valor.length > 3) {
+
+                valor =
+                    valor.substring(0, 3) + "." +
+                    valor.substring(3);
+
+            }
+
+            cpf.value = valor;
+
+        });
+
+        const telefone = document.getElementById("fone");
+
+        telefone.addEventListener("input", function() {
+
+            let valor = telefone.value.replace(/\D/g, "");
+
+            valor = valor.substring(0, 11);
+
+            if (valor.length > 10) {
+
+                valor =
+                    "(" +
+                    valor.substring(0, 2) +
+                    ") " +
+                    valor.substring(2, 7) +
+                    "-" +
+                    valor.substring(7, 11);
+
+            }
+
+            else if (valor.length > 6) {
+
+                valor =
+                    "(" +
+                    valor.substring(0, 2) +
+                    ") " +
+                    valor.substring(2, 6) +
+                    "-" +
+                    valor.substring(6);
+
+            }
+
+            else if (valor.length > 2) {
+
+                valor =
+                    "(" +
+                    valor.substring(0, 2) +
+                    ") " +
+                    valor.substring(2);
+
+            }
+
+            else if (valor.length > 0) {
+
+                valor = "(" + valor;
+
+            }
+
+            telefone.value = valor;
+
+        });
     </script>
 </body>
 </html>
